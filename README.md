@@ -189,4 +189,47 @@ customer-churn-prediction/
 ├── README.md
 └── requirements.txt
 ```
+
+## Concepts Used
+
+### Python
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature engineering
+- Data visualization using Matplotlib
+- Machine Learning using Scikit-learn and XGBoost
+- Model evaluation (Precision, Recall, F1-score, ROC-AUC)
+
+### SQL
+- Database normalization
+- Primary and Foreign Keys
+- SQL Views
+- Common Table Expressions (CTEs)
+- Window Functions
+- Aggregate Functions
+- GROUP BY and CASE WHEN
+- Ranking and Running Totals
+
+### Power BI
+- Data Modeling
+- DAX Measures
+- KPI Cards
+- Interactive Dashboard Design
+- Slicers and Cross-filtering
+- Data Visualization
+
+### Machine Learning
+- Logistic Regression
+- Random Forest
+- XGBoost
+- Train-Test Split
+- Feature Scaling
+- Class Imbalance Handling
+- Model Comparison
   
+## About Me
+
+Economics Student at Hansraj College, Delhi University.
+**Email:** [divyanhisai.ds@gmail.com ](mailto:divyanhisai.ds@gmail.com )
+
+**LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/divyanshisaini23/))
