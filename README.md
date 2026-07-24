@@ -11,23 +11,36 @@ Customer churn directly erodes recurring revenue. This project identifies which 
 Bank Customer Churn Dataset — 10,000 customer records including customer id, geography, gender, age, tenure, balance, number of products, credit card status, activity status, estimated salary, and churn flag.
 
 ## Project Structure
+
+```text
 customer-churn-prediction/
+│
 ├── data/
-│   ├── raw/                    # original dataset
-│   └── cleaned/                # cleaned dataset
+│   ├── raw/
+│   │   └── Churn_Modelling.csv
+│   └── cleaned/
+│       └── cleaned_churn.csv
+│
 ├── notebooks/
-│   ├── 01_cleaning_eda.ipynb   # data cleaning + exploratory analysis
-│   └── 02_modeling.ipynb       # feature engineering + ML models
+│   ├── 01_cleaning_eda.ipynb
+│   └── 02_modeling.ipynb
+│
 ├── sql/
-│   ├── schema.sql              # table creation, normalization, foreign keys
-│   ├── queries.sql             # segmentation, window functions, CTE
-│   └── views.sql               # views feeding Power BI
+│   ├── schema.sql
+│   ├── queries.sql
+│   └── views.sql
+│
 ├── powerbi/
 │   └── churn_dashboard.pbix
-├── outputs/
-│   └── figures/                # saved charts, ROC curve, dashboard screenshots
+│
+├── images/
+│   ├── dashboard.png
+│   ├── correlation_heatmap.png
+│   └── roc_curve.png
+│
 ├── README.md
 └── requirements.txt
+```
 
 ## Data Cleaning
 The dataset required minimal cleaning but every column was explicitly verified rather than assumed clean:
