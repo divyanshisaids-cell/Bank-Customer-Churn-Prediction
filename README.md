@@ -98,7 +98,7 @@ Overall churn rate: 20.4% (moderately imbalanced target).
 - Dropped 'customer_id' (identifier only, near-zero correlation with churn).
 One-hot encoded **'country'**; binary-encoded **'gender'**.
 - **Train/test split: 80/20**, stratified on churn to preserve the ~20% churn ratio in both sets.
-- **Standardized features (fit on train, applied to test)** for logistic regression only — tree-based models do not require scaling.
+- **Standardized features (fit on train, applied to test)** for logistic regression only - tree-based models do not require scaling.
 
 ## Modeling and Evaluation
 
@@ -116,7 +116,7 @@ Random Forest             0.78              	0.48	           0.60	          0.87
 XGBoost                 	0.72	              0.53	           0.61          	0.86	       0.856
 
 
-**Best model:** Random Forest - highest AUC (0.864), tied-best F1 (0.61), and the best precision-recall balance. XGBoost is a very close second. Logistic regression, while far more interpretable, is the weakest performer — consistent with its inability to capture the non-linear churn drivers (particularly products held) that the tree-based models pick up.
+**Best model:** Random Forest - highest AUC (0.864), tied-best F1 (0.61), and the best precision-recall balance. XGBoost is a very close second. Logistic regression, while far more interpretable, is the weakest performer - consistent with its inability to capture the non-linear churn drivers (particularly products held) that the tree-based models pick up.
 
 **A key methodological finding:** class_weight='balanced' had a large effect on logistic regression (recall 0.22 → 0.71) but almost no effect on Random Forest (0.51 → 0.48). This is because logistic regression's decision boundary is a single formula that reweighting directly shifts, while Random Forest's bagged, averaged structure dilutes the effect of reweighting across many trees - a reminder that imbalance-handling techniques are not universally effective across model types.
 
