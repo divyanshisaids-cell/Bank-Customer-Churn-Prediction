@@ -134,8 +134,14 @@ XGBoost                 	0.72	              0.53	           0.61          	0.86	
 ## Power BI Dashboard
 
 An interactive, single-page dashboard built in Power BI Desktop, connected live to SQL Server.
-![Dashboard](Dashboard/Francedashboard.png.png)
+
+### Interactive Filtering - Germany Selected
+Germany shows the highest churn rate (32%) among the three markets, with revenue at risk recalculating live to reflect only Germany's inactive customers.
 ![Dashboard](Dashboard/Gerdashboard.png.png)
+
+**France and Spain for Comparison**
+
+![Dashboard](Dashboard/Francedashboard.png.png)
 ![Dashboard](Dashboard/Spainchurndashboard.png)
 
 **KPI cards:** Overall Churn Rate, Total Customers, Revenue at Risk (Inactive Members) — built as DAX measures on the raw customer/account tables, so they dynamically update when the country slicer changes.
