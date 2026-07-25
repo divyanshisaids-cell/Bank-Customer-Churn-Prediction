@@ -34,20 +34,20 @@ Bank Customer Churn Dataset — 10,000 customer records including customer id, g
 
 ## Work Flow
 
-Dataset
-     ↓
-Data Cleaning
-     ↓
-EDA
-     ↓
-Feature Engineering
-     ↓
-Machine Learning
-     ↓
-SQL Analysis
-     ↓
-Power BI Dashboard
-     ↓
+Dataset<br>
+↓<br>
+Data Cleaning<br>
+↓<br>
+EDA<br>
+↓<br>
+Feature Engineering<br>
+↓<br>
+Machine Learning<br>
+↓<br>
+SQL Analysis<br>
+↓<br>
+Power BI Dashboard<br>
+↓<br>
 Business Recommendations
 
 
