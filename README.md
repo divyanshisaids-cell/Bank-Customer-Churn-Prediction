@@ -181,10 +181,14 @@ customer-churn-prediction/
 │   └── views.sql
 │
 ├── visualisation/
-│   ├──
-│   ├──
-│   ├──
-│   ├──
+│   ├── churn_by_activemember.png
+│   ├── churn_by_age.png
+│   ├── churn_by_country.png
+│   ├── churn_by_gender.png
+│   ├── churn_by_products.png
+│   ├── churn_distribution.png
+│   ├── correlation_heatmap.png
+│   ├── roc_curve_comparison.png
 │
 ├── dashboard/
 │   ├── churn_dashboard.pbix
