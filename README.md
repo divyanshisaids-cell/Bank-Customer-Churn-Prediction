@@ -22,7 +22,7 @@ Customer churn directly erodes recurring revenue. This project identifies which 
 
 ## Dataset
 
-Bank Customer Churn Dataset — 10,000 customer records including customer id, geography, gender, age, tenure, balance, number of products, credit card status, activity status, estimated salary, and churn flag.
+Bank Customer Churn Dataset - 10,000 customer records including customer ID, geography, gender, age, tenure, balance, number of products, credit card status, activity status, estimated salary, and churn flag.
 
 
 ## Tech Stack
