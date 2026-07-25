@@ -53,8 +53,8 @@ Business Recommendations
 
 ## Dashboard Preview
 
-![Dashboard](Dashboard/Dashboard.png.png)
 
+<img src="Dashboard/Dashboard.png" width="800">
 
 
 ## Data Cleaning
