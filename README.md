@@ -13,6 +13,8 @@ An end-to-end analytics project predicting customer churn for a retail bank, com
 
 ## Objective
 
+To build an end-to-end customer churn prediction system for a retail bank, identifying which customers are likely to churn, understanding the key factors driving that churn, and translating those insights into a measurable, business-actionable output (revenue at risk). The project was designed to demonstrate practical, job-relevant analytics skills across the full pipeline: data cleaning and exploratory analysis in Python, relational data modeling and business-facing queries in SQL, predictive modeling with proper evaluation for imbalanced classification, and an interactive dashboard for stakeholder-facing decision-making in Power BI.
+
 
 ## Business Problem
 
@@ -230,6 +232,7 @@ customer-churn-prediction/
 ## About Me
 
 Economics Student at Hansraj College, Delhi University.
+
 
 **Email:** [divyanhisai.ds@gmail.com ](mailto:divyanhisai.ds@gmail.com )
 
