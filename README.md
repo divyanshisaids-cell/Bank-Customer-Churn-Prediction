@@ -172,28 +172,24 @@ Germany shows the highest churn rate (32%) among the three markets, with revenue
 ```text
 customer-churn-prediction/
 │
-├── data/
-│   ├── raw/
-│   │   └── Churn_Modelling.csv
-│   └── cleaned/
-│       └── cleaned_churn.csv
-│
 ├── notebooks/
-│   ├── 01_cleaning_eda.ipynb
-│   └── 02_modeling.ipynb
+│   ├── 01_cleaning_eda&modeling.ipynb
 │
 ├── sql/
 │   ├── schema.sql
 │   ├── queries.sql
 │   └── views.sql
 │
-├── powerbi/
-│   └── churn_dashboard.pbix
+├── visualisation/
+│   ├──
+│   ├──
+│   ├──
+│   ├──
 │
-├── images/
-│   ├── dashboard.png
-│   ├── correlation_heatmap.png
-│   └── roc_curve.png
+├── dashboard/
+│   ├── churn_dashboard.pbix
+│   ├── Multiple dashboard.png
+│
 │
 ├── README.md
 └── requirements.txt
