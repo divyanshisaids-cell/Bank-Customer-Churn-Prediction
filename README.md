@@ -53,8 +53,7 @@ Business Recommendations
 
 ## Dashboard Preview
 
-
-<img src="Dashboard/Dashboard.png" width="800">
+![Dashboard](Dashboard/Dashboard.png.png)
 
 
 ## Data Cleaning
@@ -135,7 +134,9 @@ XGBoost                 	0.72	              0.53	           0.61          	0.86	
 ## Power BI Dashboard
 
 An interactive, single-page dashboard built in Power BI Desktop, connected live to SQL Server.
-![Dashboard]("C:\Users\Divyanshi\OneDrive\Pictures\Screenshots\Screenshot 2026-07-25 231454.png")
+![Dashboard](Dashboard/Francedashboard.png.png)
+![Dashboard](Dashboard/Gerdashboard.png.png)
+![Dashboard](Dashboard/Spainchurndashboard.png)
 
 **KPI cards:** Overall Churn Rate, Total Customers, Revenue at Risk (Inactive Members) — built as DAX measures on the raw customer/account tables, so they dynamically update when the country slicer changes.
 
