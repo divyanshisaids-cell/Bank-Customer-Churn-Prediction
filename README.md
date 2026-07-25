@@ -18,7 +18,7 @@ To build an end-to-end customer churn prediction system for a retail bank, ident
 
 ## Business Problem
 
-Customer churn directly erodes recurring revenue. This project identifies which customers are likely to churn, what factors actually drive that churn, and how much revenue is at risk giving the business a way to prioritize retention efforts.
+Customer churn directly erodes recurring revenue. This project identifies which customers are likely to churn, what factors actually drive that churn, and how much revenue is at risk, giving the business a way to prioritize retention efforts.
 
 ## Dataset
 
@@ -32,7 +32,7 @@ Bank Customer Churn Dataset — 10,000 customer records including customer id, g
 - Power BI
 - Jupyter Notebook
 
-## Work Flow
+## Workflow
 
 Dataset<br>
 ↓<br>
@@ -64,18 +64,18 @@ The dataset required minimal cleaning, but every column was explicitly verified 
 - Age range: 18–92, **no implausible values.**
 - Balance range: 0–250,898. 3,617 customers (36%) hold a $0 balance, investigated further (see EDA).
 - Credit score range: 350–850, within the standard real world range.
-- Estimated salary: **59 customers (0.6%) had salaries under 1,000.** Investigation showed these rows were unremarkable across every other feature, had a churn rate (22.0%) close to the population average (20.4%), and salary values were smoothly distributed rather than clustered at a placeholder value — retained without modification as genuine low-tail values.
+- Estimated salary: **59 customers (0.6%) had salaries under 1,000.** Investigation showed these rows were unremarkable across every other feature, had a churn rate (22.0%) close to the population average (20.4%), and salary values were smoothly distributed rather than clustered at a placeholder value - retained without modification as genuine low-tail values.
 
 
-## Exploratory Data Analysis — Key Findings
+## Exploratory Data Analysis - Key Findings
 
 Overall churn rate: 20.4% (moderately imbalanced target).
 
 **Age is the strongest driver, with a non-linear, life-stage pattern.**  Churn rises from 7.5% (18–30) to a sharp peak of 56.2% at 51–60, then falls back to 8.3% for 71+. This inverted-U shape suggests middle-aged customers are most likely to actively reassess their banking relationship, while younger and older customers are comparatively stable. Strongest linear correlation with churn (0.285).
 
-**Products held shows a striking non-linear reversal.** Churn drops from 27.7% (1 product) to 7.6% (2 products) — consistent with cross-held products increasing switching costs but spikes sharply to 82.7% (3 products, n=266) and 100% (4 products, n=60). This suggests customers pushed into 3+ products may represent a distinct, higher-risk segment (potentially oversold or already dissatisfied) rather than more loyal ones. This pattern is nearly invisible in the linear correlation (-0.048), demonstrating that correlation alone can understate a feature's true predictive value when the relationship is non-linear — a key reason tree-based models were included alongside logistic regression.
+**Products held shows a striking non-linear reversal.** Churn drops from 27.7% (1 product) to 7.6% (2 products) - consistent with cross-held products increasing switching costs but spikes sharply to 82.7% (3 products, n=266) and 100% (4 products, n=60). This suggests customers pushed into 3+ products may represent a distinct, higher-risk segment (potentially oversold or already dissatisfied) rather than more loyal ones. This pattern is nearly invisible in the linear correlation (-0.048), demonstrating that correlation alone can understate a feature's true predictive value when the relationship is non-linear - a key reason tree-based models were included alongside logistic regression.
 
-**Active membership status is a strong, intuitive driver.** Inactive members churn at 26.9% vs. 14.3% for active members — nearly double. Second-strongest correlation (-0.156).
+**Active membership status is a strong, intuitive driver.** Inactive members churn at 26.9% vs. 14.3% for active members - nearly double. Second-strongest correlation (-0.156).
 
 **Germany shows elevated churn relative to other markets.** Germany's churn rate (32.4%) is roughly double France (16.2%) and Spain (16.7%), across large, comparable sample sizes.
 
@@ -85,9 +85,9 @@ Overall churn rate: 20.4% (moderately imbalanced target).
 
 **Estimated salary, credit card ownership, and tenure** showed minimal/no relationship with churn (correlations of 0.012, -0.007, and -0.014, respectively) and were not treated as meaningful drivers.
 
-**Summary — churn drivers ranked by strength of evidence:**
+**Summary - churn drivers ranked by strength of evidence:**
 1. Age (life-stage curve)
-2. Products held (non-linear — strongest in tree-based models)
+2. Products held (non-linear - strongest in tree-based models)
 3. Active membership status
 4. Country (Germany elevated)
 5. Gender
@@ -116,9 +116,9 @@ Random Forest             0.78              	0.48	           0.60	          0.87
 XGBoost                 	0.72	              0.53	           0.61          	0.86	       0.856
 
 
-**Best model:** Random Forest — highest AUC (0.864), tied-best F1 (0.61), and the best precision-recall balance. XGBoost is a very close second. Logistic regression, while far more interpretable, is the weakest performer — consistent with its inability to capture the non-linear churn drivers (particularly products held) that the tree-based models pick up.
+**Best model:** Random Forest - highest AUC (0.864), tied-best F1 (0.61), and the best precision-recall balance. XGBoost is a very close second. Logistic regression, while far more interpretable, is the weakest performer — consistent with its inability to capture the non-linear churn drivers (particularly products held) that the tree-based models pick up.
 
-**A key methodological finding:** class_weight='balanced' had a large effect on logistic regression (recall 0.22 → 0.71) but almost no effect on Random Forest (0.51 → 0.48). This is because logistic regression's decision boundary is a single formula that reweighting directly shifts, while Random Forest's bagged, averaged structure dilutes the effect of reweighting across many trees — a reminder that imbalance-handling techniques are not universally effective across model types.
+**A key methodological finding:** class_weight='balanced' had a large effect on logistic regression (recall 0.22 → 0.71) but almost no effect on Random Forest (0.51 → 0.48). This is because logistic regression's decision boundary is a single formula that reweighting directly shifts, while Random Forest's bagged, averaged structure dilutes the effect of reweighting across many trees - a reminder that imbalance-handling techniques are not universally effective across model types.
 
 **Business framing on the precision/recall trade-off:** missing a real churner (false negative) is a direct revenue loss, while wrongly flagging a loyal customer (false positive) costs little more than an unnecessary retention offer. This asymmetry generally justifies favoring recall over precision for churn prediction.
 
@@ -127,7 +127,7 @@ XGBoost                 	0.72	              0.53	           0.61          	0.86	
 - Normalized the flat dataset into two related tables (BC_Customers, BC_accounts) with a foreign key relationship on customer_id.
 - Segmentation queries recreating EDA findings using GROUP BY and CASE WHEN (churn by country, age group, active member status, products held).
 - Window functions: RANK() OVER (PARTITION BY country ORDER BY balance) to rank customers by balance within each country; a cumulative running churn rate using SUM() OVER (ORDER BY age ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).
-- A CTE-based revenue-at-risk calculation identifying customers in Germany who are inactive members — a compounding high-risk segment identified through EDA — totaling 1,261 customers and ₹150,799,350.97 in combined balance.
+- A CTE-based revenue-at-risk calculation identifying customers in Germany who are inactive members - a compounding high-risk segment identified through EDA - totaling 1,261 customers and ₹150,799,350.97 in combined balance.
 - Multiple views (vw_churn_by_country, vw_churn_by_age_group, vw_churn_by_products_number, vw_revenue_at_risk, etc.) built to feed Power BI directly from SQL Server.
 
 
@@ -144,7 +144,7 @@ Germany shows the highest churn rate (32%) among the three markets, with revenue
 ![Dashboard](Dashboard/Francedashboard.png.png)
 ![Dashboard](Dashboard/Spainchurndashboard.png)
 
-**KPI cards:** Overall Churn Rate, Total Customers, Revenue at Risk (Inactive Members) — built as DAX measures on the raw customer/account tables, so they dynamically update when the country slicer changes.
+**KPI cards:** Overall Churn Rate, Total Customers, Revenue at Risk (Inactive Members) - built as DAX measures on the raw customer/account tables, so they dynamically update when the country slicer changes.
 
 **Visuals:**
 
@@ -165,7 +165,7 @@ Germany shows the highest churn rate (32%) among the three markets, with revenue
 ## Key Takeaways
 
 - Random Forest is the best-performing model (AUC 0.864), correctly capturing the non-linear churn drivers that logistic regression misses.
-- Products held and age are the strongest, most actionable churn signals — a customer holding 3+ products should be flagged as high-risk, not treated as more loyal.
+- Products held and age are the strongest, most actionable churn signals - a customer holding 3+ products should be flagged as high-risk, not treated as more loyal.
 - A targeted retention segment (Germany + inactive members) represents ₹150.8M in at-risk balance, identified through EDA and quantified in SQL.
 ## Project Structure
 
