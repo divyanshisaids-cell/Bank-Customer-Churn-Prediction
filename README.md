@@ -53,7 +53,7 @@ Business Recommendations
 
 ## Dashboard Preview
 
-![Dashboard]("C:\Users\Divyanshi\OneDrive\Pictures\Screenshots\Screenshot 2026-07-25 231454.png")
+![Dashboard](Dashboard.Dashboard.png.png)
 
 
 
