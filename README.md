@@ -236,4 +236,4 @@ Economics Student at Hansraj College, Delhi University.
 
 **Email:** [divyanhisai.ds@gmail.com ](mailto:divyanhisai.ds@gmail.com )
 
-**LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/divyanshisaini23/))
+**LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/divyanshisaini23/)
