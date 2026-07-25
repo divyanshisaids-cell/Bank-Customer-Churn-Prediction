@@ -53,7 +53,7 @@ Business Recommendations
 
 ## Dashboard Preview
 
-![Dashboard](Dashboard.Dashboard.png.png)
+![Dashboard](Dashboard/Dashboard.png.png)
 
 
 
